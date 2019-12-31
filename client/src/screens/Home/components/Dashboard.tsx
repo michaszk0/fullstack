@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { View } from 'react-native'
-import { Flex, Box as FlexBox } from '@rebass/grid'
-import ContentBox, { Variants as ContentBoxVariants } from './ContentBox'
+import * as React from 'react';
+import { View } from 'react-native';
+import { Flex, Box as FlexBox } from '@rebass/grid';
+import ContentBox, { Variants as ContentBoxVariants } from './ContentBox';
 
 const Dashboard = () => (
   <View>
@@ -21,14 +21,10 @@ const Dashboard = () => (
         <ContentBox title="" subtitle="Leave a star on GitHub if you like this project" />
       </FlexBox>
       <FlexBox width={1 / 3} pl="15px">
-        <ContentBox
-          title="$262"
-          subtitle="Earned Interest"
-          variant={ContentBoxVariants.cyanTitle}
-        />
+        <ContentBox title="$262" subtitle="Earned Interest" variant={ContentBoxVariants.cyanTitle} />
       </FlexBox>
     </Flex>
   </View>
-)
+);
 
-export default Dashboard
+export default Dashboard;

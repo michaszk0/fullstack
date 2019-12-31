@@ -1,20 +1,20 @@
-import * as React from 'react'
-import { Router, Route, Switch, Redirect, Link } from './Router'
-import MainLayout from '../MainLayout'
-import Login from '../../screens/Login'
-import Home from '../../screens/Home'
-import { useUserContext } from '../../screens/Login/UserContext'
+import * as React from 'react';
+import { Router, Route, Switch, Redirect, Link } from './Router';
+import MainLayout from '../MainLayout';
+import Login from '../../screens/Login';
+import Home from '../../screens/Home';
+import { useUserContext } from '../../screens/Login/UserContext';
 
 export default () => {
-  const { userState, getUser } = useUserContext()
+  const { userState, getUser } = useUserContext();
 
   React.useEffect(() => {
-    getUser()
-    return () => {}
-  }, [userState.user && userState.user.id])
+    getUser();
+    return () => {};
+  }, [userState.user && userState.user.id]);
 
   if (!userState.user && userState.loggingIn) {
-    return null
+    return null;
   }
 
   return (
@@ -42,7 +42,7 @@ export default () => {
         </Switch>
       )}
     </Router>
-  )
-}
+  );
+};
 
-export { Router, Route, Switch, Redirect, Link }
+export { Router, Route, Switch, Redirect, Link };

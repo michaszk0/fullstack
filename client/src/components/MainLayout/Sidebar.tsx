@@ -1,12 +1,12 @@
-import * as React from 'react'
-import { View } from 'react-native'
-import styled from 'styled-components'
+import * as React from 'react';
+import { View } from 'react-native';
+import styled from 'styled-components';
 // import logoSmall from '../../assets/images/logo-small.svg'
-import { Link } from '../Router'
-import Button, { Variants as ButtonVariants } from '../Button'
-import SidebarItem from './SidebarItem'
-import dashbaordIcon from '../../assets/images/icons/dashboard.svg'
-import settingsIcon from '../../assets/images/icons/settings.svg'
+import { Link } from '../Router';
+import Button, { Variants as ButtonVariants } from '../Button';
+import SidebarItem from './SidebarItem';
+import dashbaordIcon from '../../assets/images/icons/dashboard.svg';
+import settingsIcon from '../../assets/images/icons/settings.svg';
 
 const Wrapper = styled(View)<{ open: boolean }>`
   width: 300px;
@@ -19,7 +19,7 @@ const Wrapper = styled(View)<{ open: boolean }>`
   box-shadow: 0 0 100px 0 var(--black-10);
   ${props => !props.open && 'transform: translate(-300px); '}
   transition: transform 0.3s ease;
-`
+`;
 
 // const Logo = styled(Image)`
 //   width: 27px;
@@ -30,7 +30,7 @@ const Wrapper = styled(View)<{ open: boolean }>`
 // `
 
 interface SidebarProps {
-  open: boolean
+  open: boolean;
 }
 
 const Sidebar = ({ open }: SidebarProps) => (
@@ -52,6 +52,6 @@ const Sidebar = ({ open }: SidebarProps) => (
       </Button>
     </View>
   </Wrapper>
-)
+);
 
-export default Sidebar
+export default Sidebar;

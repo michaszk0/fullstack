@@ -1,43 +1,43 @@
-import * as React from 'react'
-import { Formik } from 'formik'
-import Button from '../../../components/Button'
-import Input from '../../../components/Input'
-import { ContentWrapper, FormWrapper, FormRowWrapper } from '../Login'
+import * as React from 'react';
+import { Formik } from 'formik';
+import Button from '../../../components/Button';
+import Input from '../../../components/Input';
+import { ContentWrapper, FormWrapper, FormRowWrapper } from '../Login';
 
 interface SignupFormProps {
-  onSubmit: (args: { email: string; password: string; firstName: string; lastName: string }) => void
+  onSubmit: (args: { email: string; password: string; firstName: string; lastName: string }) => void;
 }
 
 const SignupForm = ({ onSubmit }: SignupFormProps) => (
   <Formik
     initialValues={{ email: '', password: '', firstName: '', lastName: '' }}
     validate={values => {
-      const errors: any = {}
+      const errors: any = {};
       if (!values.firstName) {
-        errors.firstName = 'Required'
+        errors.firstName = 'Required';
       }
       if (!values.lastName) {
-        errors.lastName = 'Required'
+        errors.lastName = 'Required';
       }
       if (!values.email) {
-        errors.email = 'Required'
+        errors.email = 'Required';
       } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-        errors.email = 'Invalid email address'
+        errors.email = 'Invalid email address';
       }
       if (!values.password) {
-        errors.password = 'Required'
+        errors.password = 'Required';
       }
-      return errors
+      return errors;
     }}
     validateOnBlur={true}
     validateOnChange={false}
     onSubmit={async (values, { setSubmitting }) => {
       try {
-        await onSubmit({ ...values })
+        await onSubmit({ ...values });
       } catch (e) {
-        console.log('ERROR', e.message)
+        console.log('ERROR', e.message);
       }
-      setSubmitting(false)
+      setSubmitting(false);
     }}
   >
     {({
@@ -48,7 +48,7 @@ const SignupForm = ({ onSubmit }: SignupFormProps) => (
       handleBlur,
       handleSubmit,
       setFieldValue,
-      isSubmitting,
+      isSubmitting
     }) => (
       <ContentWrapper>
         <FormWrapper>
@@ -100,6 +100,6 @@ const SignupForm = ({ onSubmit }: SignupFormProps) => (
       </ContentWrapper>
     )}
   </Formik>
-)
+);
 
-export default SignupForm
+export default SignupForm;

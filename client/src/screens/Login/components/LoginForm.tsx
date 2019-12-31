@@ -1,37 +1,37 @@
-import * as React from 'react'
-import { Formik } from 'formik'
-import Button from '../../../components/Button'
-import Input from '../../../components/Input'
-import { ContentWrapper, FormWrapper } from '../Login'
+import * as React from 'react';
+import { Formik } from 'formik';
+import Button from '../../../components/Button';
+import Input from '../../../components/Input';
+import { ContentWrapper, FormWrapper } from '../Login';
 
 interface LoginFormProps {
-  onSubmit: (email: string, password: string) => void
+  onSubmit: (email: string, password: string) => void;
 }
 
 const LoginForm = ({ onSubmit }: LoginFormProps) => (
   <Formik
     initialValues={{ email: '', password: '' }}
     validate={values => {
-      const errors: any = {}
+      const errors: any = {};
       if (!values.email) {
-        errors.email = 'Required'
+        errors.email = 'Required';
       } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-        errors.email = 'Invalid email address'
+        errors.email = 'Invalid email address';
       }
       if (!values.password) {
-        errors.password = 'Required'
+        errors.password = 'Required';
       }
-      return errors
+      return errors;
     }}
     validateOnBlur={true}
     validateOnChange={false}
     onSubmit={async (values, { setSubmitting }) => {
       try {
-        await onSubmit(values.email, values.password)
+        await onSubmit(values.email, values.password);
       } catch (e) {
-        console.log('ERROR', e.message)
+        console.log('ERROR', e.message);
       }
-      setSubmitting(false)
+      setSubmitting(false);
     }}
   >
     {({
@@ -42,7 +42,7 @@ const LoginForm = ({ onSubmit }: LoginFormProps) => (
       handleBlur,
       handleSubmit,
       setFieldValue,
-      isSubmitting,
+      isSubmitting
     }) => (
       <ContentWrapper>
         <FormWrapper>
@@ -73,6 +73,6 @@ const LoginForm = ({ onSubmit }: LoginFormProps) => (
       </ContentWrapper>
     )}
   </Formik>
-)
+);
 
-export default LoginForm
+export default LoginForm;

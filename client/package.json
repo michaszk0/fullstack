@@ -14,7 +14,8 @@
     "gen:types:watch": "yarn gen:types --watch",
     "lint": "tsc && tslint --fix -p tsconfig.json -c tslint.json",
     "precommit": "pretty-quick --staged",
-    "reset": "watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf /tmp/haste-map-react-native-packager-*; rm -rf ./ios/build; yarn install; pod install --project-directory=ios; react-native start --reset-cache"
+    "reset": "watchman watch-del-all; rm -rf /tmp/metro-bundler-cache-*; rm -rf ./android/build; rm -rf ./android/.gradle; rm -rf ./android/app/build; rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf /tmp/haste-map-react-native-packager-*; rm -rf ./ios/build; yarn install; pod install --project-directory=ios; react-native start --reset-cache",
+    "prettier": "prettier --write \"{src, config}/**/*.{js,jsx,ts,tsx,json}\""
   },
   "dependencies": {
     "@accounts/apollo-link": "^0.13.0",
@@ -26,6 +27,7 @@
     "formik": "^1.5.7",
     "graphql": "^14.3.1",
     "graphql-tools": "^4.0.4",
+    "prettier-tslint": "^0.4.2",
     "react": "16.8.6",
     "react-apollo": "^2.5.6",
     "react-apollo-hooks": "^0.4.5",
@@ -55,13 +57,13 @@
     "babel-jest": "24.7.1",
     "husky": "^2.3.0",
     "jest": "24.7.1",
-    "prettier": "^1.17.1",
+    "prettier": "^1.19.1",
     "pretty-quick": "^1.11.0",
     "react-art": "16.8.6",
     "react-test-renderer": "16.8.6",
     "ts-jest": "24.0.2",
     "tslint": "5.16.0",
-    "tslint-config-prettier": "1.18.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "3.4.5"
   },
   "babel": {

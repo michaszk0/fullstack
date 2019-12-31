@@ -1,12 +1,12 @@
-import * as React from 'react'
-import { View, Text } from 'react-native'
-import styled from 'styled-components'
-import { Link } from '../../../components/Router'
+import * as React from 'react';
+import { View, Text } from 'react-native';
+import styled from 'styled-components';
+import { Link } from '../../../components/Router';
 
 const Label = styled(Text)`
   font-family: AvantGardePro;
   color: var(--light-grayish-blue);
-`
+`;
 
 const LinkToOtherLogin = (props: { isLandlord: boolean }) => (
   <View style={{ marginTop: 50 }}>
@@ -28,6 +28,6 @@ const LinkToOtherLogin = (props: { isLandlord: boolean }) => (
       </Label>
     )}
   </View>
-)
+);
 
-export default LinkToOtherLogin
+export default LinkToOtherLogin;

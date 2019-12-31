@@ -1,27 +1,27 @@
 interface Config {
   app: {
-    name: string
-  }
+    name: string;
+  };
   os: {
-    ios: string
-    android: string
-    web: string
-  }
+    ios: string;
+    android: string;
+    web: string;
+  };
   web: {
-    root: string
-  }
+    root: string;
+  };
 }
 
 export const Config: Config = {
   app: {
-    name: 'FullStack',
+    name: 'FullStack'
   },
   os: {
     android: 'android',
     ios: 'ios',
-    web: 'web',
+    web: 'web'
   },
   web: {
-    root: 'root',
-  },
-}
+    root: 'root'
+  }
+};

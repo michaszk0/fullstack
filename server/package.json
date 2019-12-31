@@ -6,7 +6,8 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "watch": "nodemon -e ts -w ./src -x npm run watch:serve",
-    "watch:serve": "ts-node src/index.ts"
+    "watch:serve": "ts-node src/index.ts",
+    "prettier": "prettier --write \"{src, config}/**/*.{js,jsx,ts,tsx,json}\""
   },
   "devDependencies": {
     "@babel/preset-env": "^7.4.5",
@@ -17,7 +18,7 @@
     "@types/node": "^12.0.4",
     "husky": "^2.3.0",
     "nodemon": "^1.19.1",
-    "prettier": "^1.17.1",
+    "prettier": "^1.19.1",
     "pretty-quick": "^1.11.0",
     "ts-node": "^8.2.0",
     "typescript": "^3.5.1"
@@ -36,7 +37,9 @@
     "graphql-toolkit": "^0.2.14",
     "mongoose": "^5.5.12",
     "plaid": "^4.0.0",
+    "prettier-tslint": "^0.4.2",
     "reflect-metadata": "^0.1.13",
+    "tslint-config-prettier": "^1.18.0",
     "type-graphql": "^0.17.4",
     "typegoose": "^5.6.0"
   },

@@ -1,9 +1,9 @@
-import * as React from 'react'
-import { View } from 'react-native'
-import styled from 'styled-components'
+import * as React from 'react';
+import { View } from 'react-native';
+import styled from 'styled-components';
 // import { useMeQuery } from '../../generated/graphql'
-import Sidebar from './Sidebar'
-import MenuIcon from './MenuIcon'
+import Sidebar from './Sidebar';
+import MenuIcon from './MenuIcon';
 
 const Wrapper = styled(View)`
   flex: 1;
@@ -24,19 +24,19 @@ const Wrapper = styled(View)`
   animation-name: fadeIn;
   animation-duration: 0.3s;
   animation-timing-function: ease-in;
-`
+`;
 
 interface MainLayoutProps {
-  children: JSX.Element
+  children: JSX.Element;
 }
 
-export const SidebarContext = React.createContext({ sidebarOpen: false })
+export const SidebarContext = React.createContext({ sidebarOpen: false });
 
 const MainLayout = ({ children }: MainLayoutProps) => {
   // const { data } = useMeQuery()
 
   // const [sidebarOpen, setSidebarOpen] = React.useState(!!(data && data.me && data.me.isOnboarded))
-  const [sidebarOpen, setSidebarOpen] = React.useState(false)
+  const [sidebarOpen, setSidebarOpen] = React.useState(false);
 
   return (
     <SidebarContext.Provider value={{ sidebarOpen }}>
@@ -46,7 +46,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
         {children}
       </Wrapper>
     </SidebarContext.Provider>
-  )
-}
+  );
+};
 
-export default MainLayout
+export default MainLayout;

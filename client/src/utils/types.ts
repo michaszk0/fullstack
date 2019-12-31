@@ -1,17 +1,17 @@
 export enum Environments {
   dev = 'development',
   stag = 'staging',
-  prod = 'production',
+  prod = 'production'
 }
 
 export enum PlaidEnvs {
   sandbox = 'sandbox',
   tartan = 'tartan',
-  production = 'production',
+  production = 'production'
 }
 
 export enum PlaidCountryCodes {
-  US = 'US',
+  US = 'US'
 }
 
 export enum PlaidProducts {
@@ -20,48 +20,48 @@ export enum PlaidProducts {
   connect = 'connect',
   info = 'info',
   risk = 'risk',
-  income = 'income',
+  income = 'income'
 }
 
 export interface PlaidObj {
-  open(): void
-  exit(opts?: { force: boolean }): void
+  open(): void;
+  exit(opts?: { force: boolean }): void;
 }
 
 export interface PlaidInstitution {
-  name: string
-  type: string
+  name: string;
+  type: string;
 }
 
 export interface PlaidAccount {
-  id: string
-  name: string
+  id: string;
+  name: string;
 }
 
 export interface PlaidMetadata {
-  institution?: PlaidInstitution
-  account?: PlaidAccount
-  account_id?: string
+  institution?: PlaidInstitution;
+  account?: PlaidAccount;
+  account_id?: string;
 }
 
 export interface PlaidOptions {
-  clientName: string
-  product: PlaidProducts[]
-  key: string
-  env: PlaidEnvs
-  countryCodes: PlaidCountryCodes[]
-  onSuccess: (publicToken: string, metaData: PlaidMetadata) => void
-  onExit?: (error: any, metaData: PlaidMetadata) => void
-  onLoad?: () => void
-  onEvent?: (eventName: string, metaData: PlaidMetadata) => void
-  webhook?: string
-  token?: string
-  language?: string
-  selectAccount?: boolean
-  isWebview?: boolean
+  clientName: string;
+  product: PlaidProducts[];
+  key: string;
+  env: PlaidEnvs;
+  countryCodes: PlaidCountryCodes[];
+  onSuccess: (publicToken: string, metaData: PlaidMetadata) => void;
+  onExit?: (error: any, metaData: PlaidMetadata) => void;
+  onLoad?: () => void;
+  onEvent?: (eventName: string, metaData: PlaidMetadata) => void;
+  webhook?: string;
+  token?: string;
+  language?: string;
+  selectAccount?: boolean;
+  isWebview?: boolean;
 }
 
 export interface PlaidStatic {
-  create(opts: PlaidOptions): PlaidObj
-  publishableKey: string
+  create(opts: PlaidOptions): PlaidObj;
+  publishableKey: string;
 }

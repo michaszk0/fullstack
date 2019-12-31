@@ -1,23 +1,23 @@
-import * as React from 'react'
-import { View, Text, TouchableWithoutFeedback } from 'react-native'
-import styled from 'styled-components'
-import { Link } from '../../../components/Router'
-import Box, { Variants as BoxVariants } from '../../../components/Box'
+import * as React from 'react';
+import { View, Text, TouchableWithoutFeedback } from 'react-native';
+import styled from 'styled-components';
+import { Link } from '../../../components/Router';
+import Box, { Variants as BoxVariants } from '../../../components/Box';
 
 export enum Tabs {
   login = '/login',
-  signup = '/signup',
+  signup = '/signup'
 }
 
 enum Sides {
   left = 'LEFT',
-  right = 'RIGHT',
+  right = 'RIGHT'
 }
 
 const TabRow = styled(View)`
   height: 90px;
   flex-direction: row;
-`
+`;
 
 const TabOuter = styled(Link)<{ active: boolean; side?: Sides }>`
   flex: 1;
@@ -27,7 +27,7 @@ const TabOuter = styled(Link)<{ active: boolean; side?: Sides }>`
   background-color: ${props => (props.active ? 'var(--light-grayish-blue)' : 'var(--white)')};
   ${props => props.side === Sides.left && 'border-top-left-radius: 10px;'}
   ${props => props.side === Sides.right && 'border-top-right-radius: 10px;'}
-`
+`;
 
 const TabInner = styled(View)`
   flex: 1;
@@ -35,7 +35,7 @@ const TabInner = styled(View)`
   height: 100%;
   justify-content: center;
   align-items: center;
-`
+`;
 
 const TabText = styled(Text)`
   font-family: AvantGardePro;
@@ -43,12 +43,12 @@ const TabText = styled(Text)`
   font-weight: 900;
   color: var(--dark-blue);
   letter-spacing: -0.91px;
-`
+`;
 
 interface TabBoxProps {
-  children: JSX.Element
-  activeTab: Tabs
-  isLandlord: boolean
+  children: JSX.Element;
+  activeTab: Tabs;
+  isLandlord: boolean;
 }
 
 const TabBox = ({ children, activeTab, isLandlord }: TabBoxProps) => (
@@ -79,6 +79,6 @@ const TabBox = ({ children, activeTab, isLandlord }: TabBoxProps) => (
     </TabRow>
     <View style={{ flex: 1 }}>{children}</View>
   </Box>
-)
+);
 
-export default TabBox
+export default TabBox;

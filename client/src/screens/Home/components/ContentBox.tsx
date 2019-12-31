@@ -1,44 +1,44 @@
-import * as React from 'react'
-import { View, Text, Image } from 'react-native'
-import styled from 'styled-components'
-import Box, { Variants as BoxVariants } from '../../../components/Box'
-import starIcon from '../../../assets/images/icons/star.svg'
+import * as React from 'react';
+import { View, Text, Image } from 'react-native';
+import styled from 'styled-components';
+import Box, { Variants as BoxVariants } from '../../../components/Box';
+import starIcon from '../../../assets/images/icons/star.svg';
 
 export enum Variants {
   rating = 'rating',
-  cyanTitle = 'greenTitle',
+  cyanTitle = 'greenTitle'
 }
 
 enum TitleVariants {
   light = 'light',
-  cyan = 'cyan',
+  cyan = 'cyan'
 }
 
 const getBoxVariant = (variant?: Variants) => {
   switch (variant) {
     case Variants.rating:
-      return BoxVariants.accent
+      return BoxVariants.accent;
     default:
-      return undefined
+      return undefined;
   }
-}
+};
 
 const getTitleVariant = (variant?: Variants) => {
   switch (variant) {
     case Variants.rating:
-      return TitleVariants.light
+      return TitleVariants.light;
     case Variants.cyanTitle:
-      return TitleVariants.cyan
+      return TitleVariants.cyan;
     default:
-      return undefined
+      return undefined;
   }
-}
+};
 
 const Wrapper = styled(View)`
   flex: 1;
   align-items: center;
   justify-content: center;
-`
+`;
 
 const Title = styled(Text)<{ variant?: TitleVariants }>`
   font-family: AvantGardePro;
@@ -47,16 +47,16 @@ const Title = styled(Text)<{ variant?: TitleVariants }>`
   color: ${props => {
     switch (props.variant) {
       case TitleVariants.light:
-        return 'var(--white)'
+        return 'var(--white)';
       case TitleVariants.cyan:
-        return 'var(--cyan)'
+        return 'var(--cyan)';
       default:
-        return 'var(--dark-blue)'
+        return 'var(--dark-blue)';
     }
   }};
   letter-spacing: -2.73px;
   text-align: center;
-`
+`;
 
 const Subtitle = styled(Text)<{ light?: boolean }>`
   font-family: AvantGardePro;
@@ -66,19 +66,19 @@ const Subtitle = styled(Text)<{ light?: boolean }>`
   letter-spacing: -0.45px;
   text-align: center;
   ${props => props.light && 'opacity: 0.6;'}
-`
+`;
 
 const StarIcon = styled(Image)`
   width: 24px;
   height: 24px;
   position: absolute;
   top: 30px;
-`
+`;
 
 interface ContentBoxProps {
-  variant?: Variants
-  title: string
-  subtitle: string
+  variant?: Variants;
+  title: string;
+  subtitle: string;
 }
 
 const ContentBox = ({ variant, title, subtitle }: ContentBoxProps) => {
@@ -90,7 +90,7 @@ const ContentBox = ({ variant, title, subtitle }: ContentBoxProps) => {
         <Subtitle light={variant === Variants.rating}>{subtitle}</Subtitle>
       </Wrapper>
     </Box>
-  )
-}
+  );
+};
 
-export default ContentBox
+export default ContentBox;
